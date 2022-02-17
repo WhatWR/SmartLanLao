@@ -1,0 +1,9 @@
+.table-home {
+    font-size: 4rem;
+    border: 1px solid;
+    position: absolute;
+    left:10rem;
+    background-color: #fff;
+    margin-top: 6rem;
+    width: 40vw;
+}

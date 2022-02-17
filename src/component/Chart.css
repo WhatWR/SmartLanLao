@@ -1,0 +1,15 @@
+.chart {
+  font-size: 4rem;
+  border: 1px solid;
+  position: absolute;
+  right: 10rem;
+  background-color: #fff;
+  margin-top: 6rem;
+  width: 40vw;
+  height: 40vh;
+}
+
+.chart-info{
+    height: 100%;
+    width: 100%;
+}
