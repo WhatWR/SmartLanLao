@@ -1,0 +1,22 @@
+
+.title,
+.orderCard,
+.order {
+  background-color: rgb(255, 232, 100);
+}
+.title {
+  background-color: rgb(255, 232, 100);
+  font-size: 25px;
+  text-align: center;
+  color: brown;
+}
+
+.orderCard {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255, 232, 100);
+}
+
+.order {
+  font-size: 15px;
+}

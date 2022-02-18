@@ -1,0 +1,14 @@
+.orderList {
+  width: 100%;
+  margin: 100px 0;
+  padding: 20px;
+  height: auto;
+  background-color: rgb(12, 63, 80);
+  /* display: flex; */
+  gap: 20px;
+  /* overflow-x: auto; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 15rem));
+  justify-content: center;
+  align-items: center;
+}

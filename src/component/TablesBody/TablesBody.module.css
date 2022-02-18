@@ -1,0 +1,17 @@
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.body {
+  margin: 50px;
+}
+
+.tables {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 12rem));
+  justify-content: center;
+  align-items: center;
+}
