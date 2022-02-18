@@ -1,9 +1,9 @@
 import React from 'react'
-import Chart from '../component/Chart'
-import Heading from '../component/Heading'
-import Linkmini from '../component/Linkmini'
-import Menu from '../component/Menu/Menu'
-import TableHome from '../component/TableHome'
+import Chart from '../../component/Chart/Chart'
+import Heading from '../../component/Heading/Heading'
+import Linkmini from '../../component/Linkmini/Linkmini'
+import Menu from '../../component/Menu/Menu'
+import TableHome from '../../component/TableHome/TableHome'
 import './Home.css'
 
 const Home = () => {

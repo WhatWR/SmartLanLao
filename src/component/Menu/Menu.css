@@ -114,3 +114,9 @@
   visibility: visible;
   transition: opacity 1s 1s;
 }
+
+.menu-user{
+  right: 10rem;
+  position: absolute;
+  font-size: 9rem;
+}

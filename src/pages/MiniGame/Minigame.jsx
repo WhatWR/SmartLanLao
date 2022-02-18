@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Wheel.css";
 class Minigame extends React.Component {
   state = {
@@ -198,7 +199,13 @@ class Minigame extends React.Component {
             <span id="result">{this.state.list[this.state.result]}</span>
           </span>
         </div>
+        <Link to='./home'>
+        <div className="main">
+        <button className="btn-back"><span className="btn-span">Back</span></button>
+        </div>
+        </Link>
       </div>
+      
     );
   }
 }
