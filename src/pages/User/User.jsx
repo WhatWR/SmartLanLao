@@ -7,16 +7,11 @@ const User = () => {
     return (
         <div className='User'>
             <h1 className='Heading'>Table {id}</h1>
+            <button class="custom-btn btn-8">เรียกพนักงาน</button>
             <Menu
                 user='prem'
             />
-            <div class="button2">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                HOVER ME
-            </div>
+            
         </div>
     )
 }
