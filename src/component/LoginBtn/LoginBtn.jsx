@@ -7,7 +7,7 @@ const LoginBtn = () => {
         return navigate('/login')
       }
   return (
-    <div className="login" onClick={adminLogout}>LoginBtn</div>
+    <button className="login" onClick={adminLogout}>Login</button>
   )
 }
 

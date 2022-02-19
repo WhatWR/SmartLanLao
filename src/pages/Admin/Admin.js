@@ -58,11 +58,10 @@ function Admin() {
     setTablesData((prev) => {
       return prev.map((tableData) => {
         return tableData.table_number === table_number
-          ? { ...tableData, is_calling: !tableData.is_calling }
+          ? { ...tableData, is_calling: false }
           : tableData
       })
     })
-    console.log(tablesData)
   }
 
   // useEffect(() => {

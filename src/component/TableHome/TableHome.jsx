@@ -24,7 +24,7 @@ const TableHome = () => {
     }
     useEffect (() => {
         getTablesData()
-        console.log(tablesData);
+        console.log(tablesData.length);
     },[])
 
     
