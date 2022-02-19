@@ -3,6 +3,7 @@ import Table from '../Table/Table'
 import classes from './TablesBody.module.css'
 
 const TablesBody = (props) => {
+  console.log(props.tablesInfo)
   return (
     <div className={classes.body}>
       <div className={classes.title}>Tables</div>

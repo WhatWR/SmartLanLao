@@ -2,11 +2,8 @@ import classes from './Admin.module.css'
 import TablesBody from '../../component/TablesBody/TablesBody';
 import OrderList from '../../component/OrderList/OrderList'
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
-
 
 const DUMMY_DATA = [
   {
@@ -35,23 +32,44 @@ const DUMMY_DATA = [
       "cust_order":  ['Menu 12', 'Menu 13', 'Menu 14']
   }
 ]
+
+async function getTablesData() {
+  const res = await axios.get('https://exceed.pontakorn.dev/table')
+  // console.log(res)
+  return res.data
+}
+
 function Admin() {
   
   const [tablesData, setTablesData] = useState([])
   const navigate = useNavigate()
 
-  // const getTablesData = () => {
-  //   axios.get('https://ecourse.cpe.ku.ac.th/exceed09/api/table/')
-  //   .then((response) => {
-  //     setTablesData(response.data)
-  //     // console.log(response.data)
-  //   })
-  // }
+  const getTablesData = () => {
+    axios.get('https://exceed.pontakorn.dev/table')
+    .then((response) => {
+      setTablesData(response.data)
+      console.log(response.data)
+    })
+  }
+
 
   // getTablesData()
   const adminLogout = () => {
     return navigate('/login')
   }
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      getTablesData().then((data) => {
+        setTablesData(data)
+      })
+    }, 5000);
+    return () => {
+      clearInterval(id)
+    }
+  }, [])
+ 
+  console.log(tablesData)
 
   return (
     <div className={classes.App}>
@@ -65,11 +83,11 @@ function Admin() {
           </div>
         </header>
         <div>
-          <TablesBody tablesInfo={DUMMY_DATA}/>
+          <TablesBody tablesInfo={tablesData}/>
         </div>  
       </div>
       <div className={classes.bottomBody}>
-        <OrderList ordersInfo={DUMMY_DATA}/>
+        {/* <OrderList ordersInfo={tablesData}/> */}
       </div>
     </div>
     
