@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import LoginForm from '../../component/LoginForm';
-import classes from './LoginPage.module.css'
+import LoginForm from '../../component/LoginForm/LoginForm';
 function LoginPage() {
   const adminUser = {
     name: "Admin123",
@@ -31,11 +30,11 @@ function LoginPage() {
 
 
   return (
-    <div className={classes.App}>
+    <div className="LoginApp">
       {(user.name != "") ? (
-        <div className={classes.welcome}>
+        <div className="welcome">
           <h2>Welcome, <span>{user.name}</span></h2>
-          <button onClick={Logout}>Logout</button>
+          <button className = "logout-button"onClick={Logout}>Logout</button>
           </div>
       ):(
         <LoginForm Login={Login} error={error} />
