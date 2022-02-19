@@ -1,0 +1,35 @@
+/* .tableNotCall, .tableCall {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  border-radius: 20%;
+} */
+
+.all {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  border-radius: 20%;
+  /* display: grid; */
+}
+.tableCall {
+  background-color: rgb(204, 22, 22);
+  
+}
+
+.tableNotCall {
+  background-color: rgb(133, 133, 168);
+  
+}
+
+.table-img {
+  width: 10rem;
+  height: 10rem;
+  
+}
+
+.title-admin {
+  font-size:2rem;
+  top: 25rem;
+  position: absolute;
+}

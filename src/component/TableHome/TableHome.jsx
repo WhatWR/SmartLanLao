@@ -30,7 +30,7 @@ const TableHome = () => {
     return (
         <ChakraProvider>
             <div className="table-home">
-                <Table variant='simple' size='lg'>
+                <Table variant='striped' size='lg' colorScheme='gray'>
                     <Thead>
                         <Tr>
                             <Th>Time</Th>
@@ -40,7 +40,7 @@ const TableHome = () => {
                     </Thead>
                     <Tbody>
                         {tablesData.map((data) =>{
-                            return <Tr> 
+                            return <Tr className="table-list"> 
                                 <Td>{data.log_time}</Td>
                                 <Td>{data.amount}</Td>
                                 </Tr>

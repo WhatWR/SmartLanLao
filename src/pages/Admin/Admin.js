@@ -61,7 +61,7 @@ function Admin() {
   // console.log(tablesData)
 
   return (
-    <div className={classes.App}>
+    <div className='app-admin'>
       <div className={classes.topBody}>
         <header className={classes.header}>
           <div className={classes.logo}>
@@ -77,9 +77,9 @@ function Admin() {
           <TablesBody tablesInfo={tablesData} cilckBtn={cilckBtn} />
         </div>
       </div>
-      <div className={classes.bottomBody}>
-        {/* <OrderList ordersInfo={tablesData}/> */}
-      </div>
+      {/* <div className={classes.bottomBody}>
+        <OrderList ordersInfo={tablesData}/>
+      </div> */}
     </div>
   )
 }

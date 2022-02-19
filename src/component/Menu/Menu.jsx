@@ -5,7 +5,7 @@ import img2 from './image/israel-albornoz-3o-rcD2dBxU-unsplash.jpg'
 import img3 from './image/jeff-vanderspank-Gla6keSyoU0-unsplash.jpg'
 import img4 from './image/nathan-van-de-graaf-RgC1D05xB9w-unsplash.jpg'
 import img5 from './image/yonatan-huaman-castro-RQ1D4LgtIFk-unsplash.jpg'
-import img6 from '../../images/gallery-img-6.jpg'
+import img6 from './image/anton-jansson-XJ4hYz8TUPk-unsplash.jpg'
 
 const Menu = (props) => {
     return (
@@ -35,21 +35,21 @@ const Menu = (props) => {
                 </a>
                 <a href="#" className="gallery-link" >
                     <img src={img4} className="food-img" />
-                    <h3 className="food-name">Meduza</h3>
+                    <h3 className="food-name">Aegis</h3>
                     <p className="food-description">
                         150 Baht/Bottom
                     </p>
                 </a>
                 <a href="#" className="gallery-link">
                     <img src={img5} className="food-img" />
-                    <h3 className="food-name">Salmon</h3>
+                    <h3 className="food-name">Brewing</h3>
                     <p className="food-description">
                         100 Baht/Bottom
                     </p>
                 </a>
                 <a href="#" className="gallery-link">
                     <img src={img6} className="food-img" />
-                    <h3 className="food-name">Vegetables</h3>
+                    <h3 className="food-name">Bug Light</h3>
                     <p className="food-description">
                         4 Baht
                     </p>
