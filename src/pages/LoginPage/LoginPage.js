@@ -2,14 +2,12 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import LoginForm from '../../component/LoginForm/LoginForm'
-function LoginPage() {
 
-  const {id} = useParams()
+function LoginPage() {
   const navigate = useNavigate()
   const [user, setUser] = useState({ name: '' })
   const [error, setError] = useState('')
   const Login = (details) => {
-    console.log(details)
     axios
       .post('https://exceed.pontakorn.dev/api-auth-token/', {
         username: details.name,
@@ -17,27 +15,12 @@ function LoginPage() {
       })
       .then((response) => {
         setToken(response.data.token)
-        console.log(response.data.is_staff)
-        if (response.data.is_staff){
+        if (response.data.is_staff) {
           navigate('/admin')
-        } else{
-          navigate(`/user/1`)
+        } else {
+          navigate(`/user/${response.data.table}`)
         }
       })
-
-    // if (
-    //   details.name === adminUser.name &&
-    //   details.password === adminUser.password
-    // ) {
-    //   // console.log('Logged in')
-    //   setUser({
-    //     name: details.name,
-    //   })
-    //   return navigate('/admin')
-    // } else {
-    //   console.log('Details do not match')
-    //   setError('Details do not match')
-    // }
   }
 
   const setToken = (token) => {
@@ -46,9 +29,7 @@ function LoginPage() {
 
   const Logout = () => {
     setUser({ name: '' })
-    console.log('Logout')
   }
-  console.log(user)
 
   return (
     <div className="LoginApp">

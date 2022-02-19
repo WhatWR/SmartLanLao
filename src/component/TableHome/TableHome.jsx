@@ -15,24 +15,22 @@ import axios from 'axios'
 
 const TableHome = () => {
     const [tablesData, setTablesData] = useState([])
-    const getTablesData = () => {
-        axios.get('https://exceed.pontakorn.dev/count/')
-            .then((response) => {
-                setTablesData(response.data)
-                
-            })
-    }
-    useEffect (() => {
-        getTablesData()
-        console.log(tablesData.length);
-    },[])
 
-    
+    const getTablesData = async () => {
+        const response = await axios.get('https://exceed.pontakorn.dev/log/')
+        const temp = response.data
+        setTablesData(temp)
+        return temp;
+    }
+    useEffect(() => {
+        getTablesData();
+    }, [])
+
+
     return (
         <ChakraProvider>
             <div className="table-home">
-                <Table variant='simple' size='lg'>
-                    <TableCaption>Imperial to metric conversion factors</TableCaption>
+                <Table variant='striped' size='lg' colorScheme='gray'>
                     <Thead>
                         <Tr>
                             <Th>Time</Th>
@@ -41,36 +39,12 @@ const TableHome = () => {
                         </Tr>
                     </Thead>
                     <Tbody>
-                        <Tr>
-                            <Td>18:00-19:00</Td>
-                            <Td>{tablesData.amount}</Td>
-
-                        </Tr>
-                        <Tr>
-                            <Td>19:00-20:00</Td>
-                            <Td>20</Td>
-
-                        </Tr>
-                        <Tr>
-                            <Td>20:00-21:00</Td>
-                            <Td>30</Td>
-
-                        </Tr>
-                        <Tr>
-                            <Td>21:00-22:00</Td>
-                            <Td>40</Td>
-
-                        </Tr>
-                        <Tr>
-                            <Td>22:00-23:00</Td>
-                            <Td>50</Td>
-
-                        </Tr>
-                        <Tr>
-                            <Td>23:00-00:00</Td>
-                            <Td>60</Td>
-
-                        </Tr>
+                        {tablesData.map((data) =>{
+                            return <Tr className="table-list"> 
+                                <Td>{data.log_time}</Td>
+                                <Td>{data.amount}</Td>
+                                </Tr>
+                        }).reverse()}
                     </Tbody>
                 </Table>
             </div>

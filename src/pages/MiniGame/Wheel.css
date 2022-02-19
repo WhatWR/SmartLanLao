@@ -110,7 +110,7 @@ input {
   mix-blend-mode: color-dodge;
   perspective: 500px;
   transform-style: preserve-3d;
-  bottom:1rem;
+  bottom:5rem;
 }
 
 .btn-back::before,

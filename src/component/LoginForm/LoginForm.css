@@ -1,14 +1,4 @@
-/* * {
-=======
-* {
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: montserrat, sans-serif;
-  
-
-  } */
 .info-input {
   appearance: none;
   background: none;
@@ -28,7 +18,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: burlywood;
+  /* background-color: #222; */
+  background-image: url('https://images.unsplash.com/photo-1501817931860-6b22e34ca1a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1778&q=80');
 }
 
 .form-head {
@@ -114,4 +105,8 @@ form::after {
 
 .form-inner input[type='submit']:hover {
   background-position: 100% 0%;
+}
+
+.home-btn {
+  margin-left: 1rem;
 }

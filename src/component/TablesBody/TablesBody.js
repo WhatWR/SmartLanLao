@@ -18,11 +18,6 @@ const TablesBody = (props) => {
             }}
           />
         ))}
-        {/* <Table tableId='1'/>
-        <Table tableId='2'/>
-        <Table tableId='3'/>
-        <Table tableId='4'/>
-        <Table tableId='5'/> */}
       </div>
     </div>
   )

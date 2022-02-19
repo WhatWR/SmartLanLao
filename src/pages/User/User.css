@@ -27,6 +27,7 @@
   top: 20rem;
   left: 20rem;
   background-color: #fff;
+  cursor: pointer;
 }
 .btn-8:hover {
   color: #000;
@@ -64,7 +65,32 @@
   transform-style: preserve-3d;
   top: 20rem;
   left: 40rem;
-  background-color: #fff;
   border-radius: 20%;
 }
 
+.img-calling {
+  width: 7rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 20%;
+}
+
+.btn-logout-user {
+  background-color:rgb(204, 0, 0);
+  border-radius: 20px;
+  width: 7rem;
+  height: 2rem;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  top:2rem;
+  
+}
+
+.btn-logout-user:hover {
+  background-color:rgb(255, 179, 179);
+  color: rgb(65, 8, 8);
+}
