@@ -11,6 +11,9 @@ const TablesBody = (props) => {
           <Table 
             tableId={table.table_number}
             isCall={table.is_calling}
+            onClick={() => {
+              console.log()
+            }}
           />
         ))}
         {/* <Table tableId='1'/>

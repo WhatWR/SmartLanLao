@@ -170,7 +170,7 @@ class Minigame extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="Wheel">
         <h1 className='heading'>I'm so highhhhh</h1>
         <span id="selector">&#9660;</span>
         <canvas

@@ -3,6 +3,10 @@ import TablesBody from '../../component/TablesBody/TablesBody';
 import OrderList from '../../component/OrderList/OrderList'
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const DUMMY_DATA = [
   {
@@ -34,6 +38,7 @@ const DUMMY_DATA = [
 function Admin() {
   
   const [tablesData, setTablesData] = useState([])
+  const navigate = useNavigate()
 
   // const getTablesData = () => {
   //   axios.get('https://ecourse.cpe.ku.ac.th/exceed09/api/table/')
@@ -44,6 +49,9 @@ function Admin() {
   // }
 
   // getTablesData()
+  const adminLogout = () => {
+    return navigate('/login')
+  }
 
   return (
     <div className={classes.App}>
@@ -53,7 +61,7 @@ function Admin() {
             <h1 className={classes.appTitle}>SMART RANLAO</h1>
           </div>
           <div className={classes.logout}>
-            <button className={classes.btn}>Logout</button>
+            <button className={classes.btn} onClick={adminLogout}>Logout</button>
           </div>
         </header>
         <div>
