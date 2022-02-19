@@ -5,34 +5,6 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const DUMMY_DATA = [
-  {
-    table_number: 1,
-    is_calling: false,
-    cust_order: ['Menu 1', 'Menu 2', 'Menu 3'],
-  },
-  {
-    table_number: 2,
-    is_calling: false,
-    cust_order: ['Menu 4', 'Menu 5'],
-  },
-  {
-    table_number: 3,
-    is_calling: true,
-    cust_order: ['Menu 6', 'Menu 7', 'Menu 8', 'Menu 9'],
-  },
-  {
-    table_number: 4,
-    is_calling: false,
-    cust_order: ['Menu 10', 'Menu 11'],
-  },
-  {
-    table_number: 5,
-    is_calling: false,
-    cust_order: ['Menu 12', 'Menu 13', 'Menu 14'],
-  },
-]
-
 async function getTablesData() {
   const res = await axios.get('https://exceed.pontakorn.dev/table')
   // console.log(res)
@@ -42,6 +14,10 @@ async function getTablesData() {
 function Admin() {
   const [tablesData, setTablesData] = useState([])
   const navigate = useNavigate()
+
+  const getToken = () => {
+    return localStorage.getItem('token')
+  }
 
   const getTablesData = async () => {
     return axios.get('https://exceed.pontakorn.dev/table/').then((response) => {
@@ -55,19 +31,25 @@ function Admin() {
     return navigate('/login')
   }
   const cilckBtn = (table_number) => {
-    setTablesData((prev) => {
-      return prev.map((tableData) => {
-        return tableData.table_number === table_number
-          ? { ...tableData, is_calling: false }
-          : tableData
-      })
-    })
+    // setTablesData((prev) => {
+    //   return prev.map((tableData) => {
+    //     return tableData.table_number === table_number
+    //       ? { ...tableData, is_calling: false }
+    //       : tableData
+    //   })
+    // })
+    axios.post(`https://exceed.pontakorn.dev/complete/${table_number}`
+        , null, { 
+            headers: { 'Authorization': `Token ${getToken()}`}
+    }).then((res) => {
+      tablesData[table_number].is_calling = true
+    }) 
   }
 
   useEffect(() => {
     const id = setInterval(async () => {
       await getTablesData()
-    }, 5000);
+    }, 1000);
     return () => {
       clearInterval(id)
     }
