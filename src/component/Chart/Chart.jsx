@@ -27,16 +27,16 @@ ChartJS.register(
 const Chart = () => {
     // const [state,setState] = useState();
     const charData = {
-        labels: ['Boston', 'A', 'B', 'C', 'D', 'E',],
+        labels: ['18.00-19.00', '19.00-20.00', '20.00-21.00', '21.00-22.00', '22.00-23.00', '23.00-00.00',],
         dataset: [{
             label: 'Population',
             data: [
-                617594,
-                181045,
-                153906,
-                106519,
-                105162,
-                95072
+                100,
+                120,
+                20,
+                10,
+                30,
+                70
             ],
             backgroundColor: [
                 'rgba(255,99,132,0.6)',

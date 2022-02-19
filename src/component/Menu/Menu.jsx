@@ -12,42 +12,42 @@ const Menu = (props) => {
         <div className="section-3">
             <h1 className={`section-heading ${props.user ? 'menu-user' : ''}`}>Menu</h1>
             <div className="gallery">
-                <a href="#" className="gallery-link" title="Order Now">
+                <a href="#" className="gallery-link">
                     <img src={img1} className="food-img" />
                     <h3 className="food-name">Heineken</h3>
                     <p className="food-description">
                         120 Baht/Bottom
                     </p>
                 </a>
-                <a href="#" className="gallery-link" title="Order Now">
+                <a href="#" className="gallery-link" >
                     <img src={img2} className="food-img" />
                     <h3 className="food-name">Huerca</h3>
                     <p className="food-description">
                         120 Baht/Bottom
                     </p>
                 </a>
-                <a href="#" className="gallery-link" title="Order Now">
+                <a href="#" className="gallery-link" >
                     <img src={img3} className="food-img" />
                     <h3 className="food-name">Corona Extra</h3>
                     <p className="food-description">
                         120 Baht/Bottom
                     </p>
                 </a>
-                <a href="#" className="gallery-link" title="Order Now">
+                <a href="#" className="gallery-link" >
                     <img src={img4} className="food-img" />
                     <h3 className="food-name">Meduza</h3>
                     <p className="food-description">
                         150 Baht/Bottom
                     </p>
                 </a>
-                <a href="#" className="gallery-link" title="Order Now">
+                <a href="#" className="gallery-link">
                     <img src={img5} className="food-img" />
                     <h3 className="food-name">Salmon</h3>
                     <p className="food-description">
                         100 Baht/Bottom
                     </p>
                 </a>
-                <a href="#" className="gallery-link" title="Order Now">
+                <a href="#" className="gallery-link">
                     <img src={img6} className="food-img" />
                     <h3 className="food-name">Vegetables</h3>
                     <p className="food-description">

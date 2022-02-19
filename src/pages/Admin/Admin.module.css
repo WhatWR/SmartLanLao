@@ -1,0 +1,53 @@
+.App {
+  font-family: monospace;
+  background-color: rgb(255, 246, 231);
+}
+
+.bottomBody {
+  width: 100%;
+  height: 40%;
+  background-color: #136274;
+}
+
+.header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logout {
+  display: flex;
+  position: relative;
+  padding: 15px 15px;
+}
+
+.appTitle {
+  padding: 5px 5px;
+  margin: 0;
+  margin-top: 2px;
+  font-size: 45px;
+  color: #D9D6D2;
+}
+
+.btn {
+  background-color:rgb(204, 0, 0);
+  border-radius: 20px;
+  width: 7rem;
+  height: 2rem;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  
+}
+
+.btn:hover {
+  background-color:rgb(255, 179, 179);
+  color: rgb(65, 8, 8);
+}
+
+html {
+  font-size: 100%;
+}
