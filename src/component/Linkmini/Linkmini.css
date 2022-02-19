@@ -61,3 +61,12 @@
   margin: 2rem 0;
   text-shadow: 0.1rem 0.1rem 0.1rem #000;
 }
+
+/* .linkmini-home {
+
+} */
+
+.linkmini-user {
+  top:5rem;
+  left: 5rem;
+}

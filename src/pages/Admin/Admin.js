@@ -43,8 +43,8 @@ function Admin() {
   const [tablesData, setTablesData] = useState([])
   const navigate = useNavigate()
 
-  const getTablesData = () => {
-    return axios.get('https://exceed.pontakorn.dev/table').then((response) => {
+  const getTablesData = async () => {
+    return axios.get('https://exceed.pontakorn.dev/table/').then((response) => {
       setTablesData(response.data)
       // console.log(response.data)
     })
@@ -64,21 +64,19 @@ function Admin() {
     })
   }
 
-  // useEffect(() => {
-  //   const id = setInterval(() => {
-  //     getTablesData().then((data) => {
-  //       setTablesData(data)
-  //     })
-  //   }, 5000);
-  //   return () => {
-  //     clearInterval(id)
-  //   }
-  // }, [])
-
   useEffect(() => {
-    getTablesData()
-    },[])
-  console.log(tablesData)
+    const id = setInterval(async () => {
+      await getTablesData()
+    }, 5000);
+    return () => {
+      clearInterval(id)
+    }
+  }, [])
+
+  // useEffect(() => {
+  //   getTablesData()
+  //   },[])
+  // console.log(tablesData)
 
   return (
     <div className={classes.App}>
