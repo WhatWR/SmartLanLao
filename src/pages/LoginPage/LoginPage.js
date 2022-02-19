@@ -7,7 +7,7 @@ function LoginPage() {
     password: "123456"
   }
   const navigate = useNavigate()
-  const [user, setUser] = useState('name:');
+  const [user, setUser] = useState({ name: '' });
   const [error, setError] = useState("");
   const Login = details => {
     console.log(details);
@@ -29,13 +29,13 @@ function LoginPage() {
     setUser({name: ""})
     console.log("Logout");
   }
-
+  console.log(user)
 
   return (
     <div className="LoginApp">
-      {(user.name !== "") ? (
+      {(user?.name !== "") ? (
         <div className="welcome">
-          <h2>Welcome, <span>{user.name}</span></h2>
+          <h2>Welcome, <span>{user?.name}</span></h2>
           <button className = "logout-button"onClick={Logout}>Logout</button>
           </div>
       ):(

@@ -3,6 +3,7 @@ import Table from '../Table/Table'
 import classes from './TablesBody.module.css'
 
 const TablesBody = (props) => {
+
   console.log(props.tablesInfo)
   return (
     <div className={classes.body}>
@@ -13,7 +14,7 @@ const TablesBody = (props) => {
             tableId={table.table_number}
             isCall={table.is_calling}
             onClick={() => {
-              console.log()
+              props.cilckBtn(table.table_number)
             }}
           />
         ))}
