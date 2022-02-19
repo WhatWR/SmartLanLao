@@ -28,8 +28,8 @@ const User = () => {
         })
     }
     useEffect(() => {
-        getID()
-    }, [])
+        getID(id)
+    }, )
 
     return (
         <div className='User'>

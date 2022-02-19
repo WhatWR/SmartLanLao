@@ -39,22 +39,18 @@ const Chart = () => {
         getTablesData();
     }, [])
     const charData = {
-        labels: [tablesData.map((data) => {
-            return data.log_time
-        })],
+        labels: tablesData.map((data) => data['log_time']).reverse(),
+        // [...tableData.map(data => data['amount'])].reverse()
         dataset: [{
             label: 'Population',
-            data: [
+            data:
                 // 100,
                 // 120,
                 // 20,
                 // 10,
                 // 30,
                 // 70
-                tablesData.map((data)=>{
-                    return data.amount
-                })
-            ],
+                tablesData.map((data) => data['amount']).reverse(),
             backgroundColor: [
                 'rgba(255,99,132,0.6)',
                 'rgba(54,162,235,0.6)',

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './TableHome.css'
-import ConVerTime from '../../service/ConVertTime'
 import {
     Table,
     Thead,
@@ -32,7 +31,6 @@ const TableHome = () => {
         <ChakraProvider>
             <div className="table-home">
                 <Table variant='simple' size='lg'>
-                    <TableCaption>Imperial to metric conversion factors</TableCaption>
                     <Thead>
                         <Tr>
                             <Th>Time</Th>
@@ -43,10 +41,10 @@ const TableHome = () => {
                     <Tbody>
                         {tablesData.map((data) =>{
                             return <Tr> 
-                                <Td>{data.amount !==0?data.log_time: ''}</Td>
-                                <Td>{data.amount !==0? data.amount: ''}</Td>
+                                <Td>{data.log_time}</Td>
+                                <Td>{data.amount}</Td>
                                 </Tr>
-                        })}
+                        }).reverse()}
                     </Tbody>
                 </Table>
             </div>
