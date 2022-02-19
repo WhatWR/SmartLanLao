@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Chart.css'
+import getTablesData from '../TableHome/TableHome'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -11,6 +12,7 @@ import {
     Legend,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
+import axios from 'axios'
 
 ChartJS.register(
     CategoryScale,
@@ -25,18 +27,33 @@ ChartJS.register(
 
 
 const Chart = () => {
-    // const [state,setState] = useState();
+    const [tablesData, setTablesData] = useState([])
+
+    const getTablesData = async () => {
+        const response = await axios.get('https://exceed.pontakorn.dev/log/')
+        const temp = response.data
+        setTablesData(temp)
+        return temp;
+    }
+    useEffect(() => {
+        getTablesData();
+    }, [])
     const charData = {
-        labels: ['18.00-19.00', '19.00-20.00', '20.00-21.00', '21.00-22.00', '22.00-23.00', '23.00-00.00',],
+        labels: [tablesData.map((data) => {
+            return data.log_time
+        })],
         dataset: [{
             label: 'Population',
             data: [
-                100,
-                120,
-                20,
-                10,
-                30,
-                70
+                // 100,
+                // 120,
+                // 20,
+                // 10,
+                // 30,
+                // 70
+                tablesData.map((data)=>{
+                    return data.amount
+                })
             ],
             backgroundColor: [
                 'rgba(255,99,132,0.6)',
@@ -52,15 +69,15 @@ const Chart = () => {
     // setState(charData)
     return (
         <div className="chart">
-        <Line className="chart-info"
-            datasetIdKey='id'
-            data={{
-                labels: charData.labels,
-                datasets: charData.dataset,
+            <Line className="chart-info"
+                datasetIdKey='id'
+                data={{
+                    labels: charData.labels,
+                    datasets: charData.dataset,
 
 
-            }}
-        />
+                }}
+            />
         </div>
 
     )
