@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Linkmini from '../../component/Linkmini/Linkmini'
 import Menu from '../../component/Menu/Menu'
@@ -8,9 +8,16 @@ import './User.css'
 const User = () => {
     const { id } = useParams()
     const [calling, setCalling] = useState([])
+    
+    const getToken = () => {
+        return localStorage.getItem('token')
+    }
+
     const cilckBtn = (id) => {
-        axios.post(`https://exceed.pontakorn.dev/complete/${id}`, null, { headers: { 'Authorization': 'Token sfnlsqnflsnleng;'}})
-        
+        axios.post(`https://exceed.pontakorn.dev/call/${id}`
+        , null, { 
+            headers: { 'Authorization': `Token ${getToken()}`}
+        })
     }
 
     const getID = (id) => {
@@ -18,10 +25,11 @@ const User = () => {
             setCalling(res.data);
             // return { ...res.data, is_calling: true }
             console.log(res.data)
-
         })
     }
-    getID()
+    useEffect(() => {
+        getID()
+    }, [])
 
     return (
         <div className='User'>

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import LoginForm from '../../component/LoginForm/LoginForm'
+
 function LoginPage() {
 
   const {id} = useParams()
@@ -9,7 +10,7 @@ function LoginPage() {
   const [user, setUser] = useState({ name: '' })
   const [error, setError] = useState('')
   const Login = (details) => {
-    console.log(details)
+    console.log()
     axios
       .post('https://exceed.pontakorn.dev/api-auth-token/', {
         username: details.name,
@@ -17,11 +18,11 @@ function LoginPage() {
       })
       .then((response) => {
         setToken(response.data.token)
-        console.log(response.data.is_staff)
+        console.log(response)
         if (response.data.is_staff){
           navigate('/admin')
-        } else{
-          navigate(`/user/1`)
+        } else {
+          navigate(`/user/${response.data.table}`)
         }
       })
 
