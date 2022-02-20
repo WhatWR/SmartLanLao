@@ -70,8 +70,17 @@ const Chart = () => {
                 data={{
                     labels: charData.labels,
                     datasets: charData.dataset,
-
-
+                }}
+                options={{
+                   scales: {
+                       yAxis: {
+                           min: 0,
+                           suggestedMax: 10,
+                           ticks: {
+                               stepSize: 1,
+                           }
+                       }
+                   }
                 }}
             />
         </div>
