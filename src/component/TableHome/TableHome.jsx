@@ -13,20 +13,8 @@ import {
 } from '@chakra-ui/react'
 import axios from 'axios'
 
-const TableHome = () => {
-    const [tablesData, setTablesData] = useState([])
-
-    const getTablesData = async () => {
-        const response = await axios.get('https://exceed.pontakorn.dev/log/')
-        const temp = response.data
-        setTablesData(temp)
-        return temp;
-    }
-    useEffect(() => {
-        getTablesData();
-    }, [])
-
-
+const TableHome = ({tablesData}) => {
+    
     return (
         <ChakraProvider>
             <div className="table-home">

@@ -26,18 +26,8 @@ ChartJS.register(
 
 
 
-const Chart = () => {
-    const [tablesData, setTablesData] = useState([])
+const Chart = ({tablesData}) => {
 
-    const getTablesData = async () => {
-        const response = await axios.get('https://exceed.pontakorn.dev/log/')
-        const temp = response.data
-        setTablesData(temp)
-        return temp;
-    }
-    useEffect(() => {
-        getTablesData();
-    }, [])
     const charData = {
         labels: tablesData.map((data) => data['log_time']).reverse(),
         // [...tableData.map(data => data['amount'])].reverse()
